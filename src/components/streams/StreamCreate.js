@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
+import { connect } from 'react-redux';
+import { createStream } from '../../actions';
 
 class StreamCreate extends Component {
   renderError({ error, touched }){
@@ -26,8 +28,8 @@ class StreamCreate extends Component {
     );
   }
 
-  onSubmit(formValues) {
-      console.log(formValues);
+  onSubmit= (formValues)=> {
+      this.props.createStream(formValues);
   }
 
   render() {
@@ -55,7 +57,13 @@ errors.title = 'You must enter a title';
 
 
 
-export default reduxForm({
+const formWrapped = reduxForm({
   form: "streamCreate",
   validate
 })(StreamCreate);
+
+// const mapStateToProps =(state)=>{
+//   return { formValues : state.auth.isSignedIn };
+// }
+
+export default connect(null, { createStream})(formWrapped);
