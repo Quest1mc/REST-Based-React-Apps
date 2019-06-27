@@ -1,4 +1,4 @@
-import { EDIT_STREAM } from "./types";
+// import { EDIT_STREAM } from "./types";
 
 // Sample code 
 // array based approach 
@@ -19,20 +19,20 @@ import { EDIT_STREAM } from "./types";
 // };
 
 // object based approach 
-const streamReducer = (state = {}, action ) => {
-    switch (action.type){
-        case EDIT_STREAM:
-            // const newState = {...state };
-            // newState[action.payload.id]= action.payload;
-            // return newState; 
+// const streamReducer = (state = {}, action ) => {
+//     switch (action.type){
+//         case EDIT_STREAM:
+//             // const newState = {...state };
+//             // newState[action.payload.id]= action.payload;
+//             // return newState; 
 
 
-            // alternate
-            return {...state, [action.payload.id]: action.payload};
+//             // alternate
+//             return {...state, [action.payload.id]: action.payload};
 
-        default:
-            return state;
-    }
-}
+//         default:
+//             return state;
+//     }
+// }
 
-export default streamReducer;
+// export default streamReducer;
